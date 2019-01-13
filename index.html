@@ -1,39 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Culture Shock</title>
 
+    <!--Link to AJAX and JQuery-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    
     <!--Link to CSS Bootstrap-->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-  
-    <!--Link to AJAX and JQuery-->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/css/bootstrap.min.css" />
-    
+
     <!--Link to you CSS Stylesheet-->
     <link rel="stylesheet" type="text/css" href="assets/css/style.css">
 
 </head>
+
 <body>
-    
-<!-- As a link -->
-<nav class="navbar navbar-light bg-light">
-    <a class="navbar-brand" href="#">Trivia App</a>
+
+    <!-- As a link -->
+    <nav class="navbar navbar-light bg-light">
+        <a class="navbar-brand" href="#">Culture Shock!</a>
 
 
-  </nav>
+    </nav>
 
-  <div id="container">
-      <div class="row">
-          <div class="col-md-8">
-            
-          </div>
-      </div>
-  </div>
-  
-<script src="assets/javascript/JavaScript.js"></script>
+    <div id="container">
+        <div class="row">
+            <div class="col-md-8">
+                <div id="add-question">
+
+
+                    <h4>Question1</h4><br>
+
+                    <form>
+                        <input type="radio" name="choice" value="Scripting"> Scripting
+                        <input type="radio" name="choice" value="Programming"> Programming
+                        <input type="radio" name="choice" value="Application"> Application
+                        <input type="radio" name="choice" value="None of These"> None of These
+                    </form>
+
+                    <!--Append the additional questions here-->
+                </div>
+                <button>Submit Answer</button>
+
+            </div>
+        </div>
+    </div>
+
+    <!--My script-->
+    <script type="text/javascript" src="assets/javascript/javascript.js"></script>
 
 </body>
+
 </html>
