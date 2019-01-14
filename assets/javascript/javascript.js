@@ -7,7 +7,44 @@ var Questions = {
 
 };
 
-var Answers = ["Kiev", "Warsaw", "Paris", "Bratislava", "London", "Reykjavik", "Buenos Aires", "Munich", "The Hague", "Zurich", "Geneva", "Berlin"];
+var Answers = ["Kiev", "Warsaw", "Paris", "Bratislava", "London", 
+"Reykjavik", "Buenos Aires", "Munich", 
+"The Hague", "Zurich", "Geneva", "Berlin"];
+
+
+var QuestionsArray = [
+    {
+      question: "What is the capital of Ukraine?",
+      answers: {
+        a: "Kiev",
+        b: "Warsaw",
+        c: "Paris",
+        d: "Bratislava"
+      },
+      correctAnswer: "a"
+    },
+    {
+      question: "In what city would you expect to see pretzels being sold by street vendors in October?",
+      answers: {
+        a: "London",
+        b: "Reykjavik",
+        c: "Buenos Aires",
+        d: "Munich"
+      },
+      correctAnswer: "d"
+    },
+    {
+      question: "In 1949, the international community gathered in this city to ratify basic protections for citizens of the world living in a state of war...",
+      answers: {
+        a: "The Hague",
+        b: "Zurich",
+        c: "Geneva",
+        d: "Berlin"
+      },
+      correctAnswer: "c"
+    }
+  ];
+  
 
 
 //Stopwatch Logic
