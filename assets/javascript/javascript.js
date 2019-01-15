@@ -167,7 +167,9 @@ function StartGame() {
     //     $("#add-question").append("<button>" + "Submit Answer" + "</button>")
 
 
+    //had to start this after the function is completed otherwise it times out
     if (x=16 && !clockRunning) {
+        $('#display').text("00:00");
         intervalId = setInterval(count, 1000);
     };
 
@@ -175,8 +177,15 @@ function StartGame() {
 
 function SubmitButton() {
     //take the answers and check for correctness
+    //did not start this since the radius inputs were not working correctly
+
     //empty the questions div
     //count up points and display in a new div
+
+    //empty the div where all the questions and answers are
+
+    $("#add-question").empty();
+    $("#")
 
 };
 
