@@ -1,54 +1,58 @@
 //Variables
 
-var Questions = {
-    Q1: "What is the capital of Ukraine?",
-    Q2: "In what city would you expect to see pretzels being sold by street vendors in October?",
-    Q3: "In 1949, the international community gathered in this city to ratify basic protections for citizens of the world living in a state of war...",
-    Q4: "If you see the biggest ferris wheel you've ever seen in your life, you're probably in this city...",
-    Q5: "Which of these is a sister city of Minneapolis? It is at approximately the same latitude..."
-};
-
-var Answers = ["Kiev", "Warsaw", "Paris", "Bratislava", 
-"London", "Reykjavik", "Buenos Aires", "Munich", 
-"The Hague", "Zurich", "Geneva", "Berlin",
-"Rio De Janeiro", "London", "New York City", "Las Vegas",
-"Lima", "Harbin", "Portland", "Osaka"
-];
-
-//I want to do it this way, but I don't have time to mess around with it anymore...
 var QuestionsArray = [
     {
-      question: "What is the capital of Ukraine?",
-      answers: {
-        a: "Kiev",
-        b: "Warsaw",
-        c: "Paris",
-        d: "Bratislava"
-      },
-      correctAnswer: "a"
+        question: "What is the capital of Ukraine?",
+        answers: {
+            a: "Kiev",
+            b: "Warsaw",
+            c: "Paris",
+            d: "Bratislava"
+        },
+        correctAnswer: "a"
     },
     {
-      question: "In what city would you expect to see pretzels being sold by street vendors in October?",
-      answers: {
-        a: "London",
-        b: "Reykjavik",
-        c: "Buenos Aires",
-        d: "Munich"
-      },
-      correctAnswer: "d"
+        question: "In what city would you expect to see pretzels being sold by street vendors in October?",
+        answers: {
+            a: "London",
+            b: "Reykjavik",
+            c: "Buenos Aires",
+            d: "Munich"
+        },
+        correctAnswer: "d"
     },
     {
-      question: "In 1949, the international community gathered in this city to ratify basic protections for citizens of the world living in a state of war...",
-      answers: {
-        a: "The Hague",
-        b: "Zurich",
-        c: "Geneva",
-        d: "Berlin"
-      },
-      correctAnswer: "c"
+        question: "In 1949, the international community gathered in this city to ratify basic protections for citizens of the world living in a state of war...",
+        answers: {
+            a: "The Hague",
+            b: "Zurich",
+            c: "Geneva",
+            d: "Berlin"
+        },
+        correctAnswer: "c"
+    },
+    {
+        question: "If you see the biggest ferris wheel you've ever seen in your life, you're probably in this city...",
+        answers: {
+            a: "Rio de Janeiro",
+            b: "London",
+            c: "New York City",
+            d: "Las Vegas"
+        },
+        correctAnswer: "d"
+    },
+    {
+        question: "Which of these is a sister city of Minneapolis? It is at approximately the same latitude...",
+        answers: {
+            a: "Lima",
+            b: "Portland",
+            c: "Harbin",
+            d: "Osaka"
+        },
+        correctAnswer: "c"
     }
-  ];
-  
+];
+
 
 
 //Stopwatch Logic
@@ -68,7 +72,6 @@ var intervalId;
 var clockRunning = false;
 //give people 60 seconds
 var time = 60;
-x = 0;
 
 function reset() {
 
@@ -139,26 +142,44 @@ function timeConverter(t) {
 
 function StartGame() {
 
-    Object.keys(Questions).forEach(function (element) {
+    for (i = 0; i < QuestionsArray.length; i++) {
         // debugger;
-        $("#add-question").append("<form></form>")
-        $("#add-question").append( "<h4>" + Questions[element] + "</h4>");
+
+        //Put the questions into the quiz
+        console.log(i);
+        var Que = $("<h4>").attr("id", "question-" + i);
+        console.log(Que);
+        console.log(QuestionsArray[i].question);
+        $("#add-question").append(Que);
+        $("#question-" + i).text(QuestionsArray[i].question);
 
         //Also need to append the answers
 
-        // debugger;
-        for (i = 0; i < 4; i++) {
-            $("#add-question").append("<input>" + Answers[i + x] + "</input>");
-            $('<input type="radio">');
-        };
-        x += 4;
+        var AnsA = $("<input>").attr("type", "radio").attr("id", "a-" + i).attr("value", 1);
+        console.log(AnsA);
+        $("#add-question").append(AnsA);
+        $("#a-" + i).html(QuestionsArray[i].answers.a);
 
-        $("#add-question").append( "<br><br>");
+        var AnsB = $("<input>").attr("type", "radio").attr("id", "b-" + i).attr("value", 2);
+        console.log(AnsB);
+        $("#add-question").append(AnsB);
+        $("#b-" + i).html(QuestionsArray[i].answers.b);
 
-    });
+        var AnsC = $("<input>").attr("type", "radio").attr("id", "c-" + i).attr("value", 3);
+        console.log(AnsC);
+        $("#add-question").append(AnsC);
+        $("#c-" + i).html(QuestionsArray[i].answers.c);
 
-    
-    x = 0;
+        var AnsD = $("<input>").attr("type", "radio").attr("id", "d-" + i).attr("value", 4);
+        console.log(AnsD);
+        $("#add-question").append(AnsD);
+        $("#d-" + i).html(QuestionsArray[i].answers.d);
+    }
+
+    $("#add-question").append("<br><br>");
+    // debugger;
+
+
 
 
     //generate the submit button once the questions are all on the page
@@ -168,7 +189,7 @@ function StartGame() {
 
 
     //had to start this after the function is completed otherwise it times out
-    if (x=16 && !clockRunning) {
+    if (!clockRunning) {
         $('#display').text("00:00");
         intervalId = setInterval(count, 1000);
     };
