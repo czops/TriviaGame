@@ -1,6 +1,7 @@
 .container{
     margin: 40px;
-    align-content: center;
+    position: absolute;
+    left:50%;
 }
 
 body {
@@ -10,4 +11,12 @@ body {
 
 .navbar{
     text-align: center;
+}
+
+.answer{
+    margin-left: 5px;
+}
+
+.checkbox{
+    margin-left: 10px;
 }
