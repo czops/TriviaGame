@@ -155,25 +155,25 @@ function StartGame() {
 
         //Also need to append the answers
 
-        var AnsA = $("<input>").attr("type", "radio").attr("id", "a-" + i).attr("value", 1).attr("class", "checkbox").attr("name", QuestionsArray[i].question);
+        var AnsA = $("<input>").attr("type", "radio").attr("id", "a-" + i).attr("value", 1).attr("class", "checkbox");
         var AnsALabel = $("<label>").attr("for", AnsA).text(QuestionsArray[i].answers.a).attr("class", "answer");
         console.log(AnsA);
         $("#add-question").append(AnsA);
         $("#add-question").append(AnsALabel);
 
-        var AnsB = $("<input>").attr("type", "radio").attr("id", "b-" + i).attr("value", 2).attr("class", "checkbox").attr("name", QuestionsArray[i].question);
+        var AnsB = $("<input>").attr("type", "radio").attr("id", "b-" + i).attr("value", 2).attr("class", "checkbox");
         var AnsBLabel = $("<label>").attr("for", AnsB).text(QuestionsArray[i].answers.b).attr("class", "answer");
         console.log(AnsB);
         $("#add-question").append(AnsB);
         $("#add-question").append(AnsBLabel);
 
-        var AnsC = $("<input>").attr("type", "radio").attr("id", "c-" + i).attr("value", 3).attr("class", "checkbox").attr("name", QuestionsArray[i].question);
+        var AnsC = $("<input>").attr("type", "radio").attr("id", "c-" + i).attr("value", 3).attr("class", "checkbox");
         var AnsCLabel = $("<label>").attr("for", AnsC).text(QuestionsArray[i].answers.c).attr("class", "answer");
         console.log(AnsC);
         $("#add-question").append(AnsC);
         $("#add-question").append(AnsCLabel);
 
-        var AnsD = $("<input>").attr("type", "radio").attr("id", "d-" + i).attr("value", 4).attr("class", "checkbox").attr("name", QuestionsArray[i].question);
+        var AnsD = $("<input>").attr("type", "radio").attr("id", "d-" + i).attr("value", 4).attr("class", "checkbox");
         var AnsDLabel = $("<label>").attr("for", AnsD).text(QuestionsArray[i].answers.d).attr("class", "answer");
         console.log(AnsD);
         $("#add-question").append(AnsD);
